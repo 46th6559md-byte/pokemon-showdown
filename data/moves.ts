@@ -14042,16 +14042,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	psychic: {
 		num: 94,
 		accuracy: 100,
-		basePower: 90,
+		basePower: 900,
 		category: "Special",
 		name: "Psychic",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		pp: 50,
+		priority: 5,
+		flags: { protect: 0, mirror: 0, metronome: 0 },
 		secondary: {
-			chance: 10,
+			chance: 100,
 			boosts: {
-				spd: -1,
+				spd: -5,
 			},
 		},
 		target: "normal",
