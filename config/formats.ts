@@ -27,7 +27,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen9',
 		challengeShow: true,
 		searchShow: true,
-		ruleset: [
+		ruleset: [ 'OM Unobtainable Moves'
 		],
 	},
 
