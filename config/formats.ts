@@ -18,6 +18,18 @@ The column value will be ignored for repeat sections.
 */
 
 export const Formats: import('../sim/dex-formats').FormatList = [
+	{
+		section: "Custom Tiers",
+	},
+	{
+		name: "[Gen 9] Poketime's Broken Tier",
+		desc: `Ultimate god tier mode for pokertime. No restrictions, no OHKO clauses!`,
+		mod: 'gen9',
+		challengeShow: true,
+		searchShow: true,
+		ruleset: ['Standard', '!OHKO Clause', '!Evasion Moves Clause', '!Species Clause'],
+		// This explicitly turns off standard restriction rules
+	},
 
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
