@@ -1666,9 +1666,6 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		desc: "Allows special move legality rules to allow moves which are otherwise unobtainable without hacking or glitches",
 		// Hardcoded in team-validator.ts
 		onValidateRule() {
-			if (!this.ruleTable.checkCanLearn?.[0]) {
-				throw new Error(`A format with the "OM Unobtainable Moves"${this.ruleTable.blame('omunobtainablemoves')} rule must also have a special move legality rule.`);
-			}
 		},
 	},
 	stabmonsmovelegality: {
