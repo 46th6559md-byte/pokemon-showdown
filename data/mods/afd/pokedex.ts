@@ -1,4 +1,16 @@
-export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {
+export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {	
+	fennekin: {
+		num: 653,
+		name: "Fennekin",
+		types: ["Fire", "Psychic"],
+		baseStats: {hp: 150, atk: 10, def: 150, spa: 200, spd: 150, spe: 200}, // 860 Total (Higher than Mega Rayquaza)
+		abilities: {0: "No Guard", 1: "As One (Glastrier)", H: "Wonder Guard"}, 
+		heightm: 0.4,
+		weightkg: 9.4,
+		color: "Red",
+		eggGroups: ["Field"],
+	},
+
 	seaking: {
 		inherit: true,
 		baseStats: { hp: 80, atk: 92, def: 65, spa: 65, spd: 80, spe: 98 },
