@@ -29,7 +29,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		searchShow: true,
 		ruleset: [
 			'Raw Teams', // Bypasses the team validator completely
-			'Adjust Species: Fennekin-150-10-150-200-150-200', // Keeps your custom stats
+			
 		],
 	},
 
