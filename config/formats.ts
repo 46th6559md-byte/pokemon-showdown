@@ -31,24 +31,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Raw Teams', // Bypasses the team validator completely
 			'Adjust Species: Fennekin-150-10-150-200-150-200', // Keeps your custom stats
 		],
-		onBegin() {
-			// --- CHANGE ANY ATTACK RIGHT HERE ---
-			
-			// 1. Let's make Sheer Cold hit with 100% accuracy without needing an ability
-			const sheercold = this.dex.moves.get('sheercold');
-			sheercold.accuracy = true; // 'true' means it never misses!
-			sheercold.pp = 64; 
-
-			// 2. Let's make Flamethrower completely broken (999 Power, Priority +8)
-			const flamethrower = this.dex.moves.get('flamethrower');
-			flamethrower.basePower = 999; 
-			flamethrower.priority = 8; // Attacks instantly before the opponent can move!
-			flamethrower.accuracy = true;
-			
-			// 3. You can add more moves here using the exact same pattern:
-			// const moveName = this.dex.moves.get('lowercasename');
-			// moveName.basePower = 500;
-		},
 	},
 
 	// S/V Singles
