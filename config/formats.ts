@@ -18,27 +18,6 @@ The column value will be ignored for repeat sections.
 */
 
 export const Formats: import('../sim/dex-formats').FormatList = [
-	{	
-		section: "Custom Tiers",
-	},
-	{
-		name: "[Gen 9] Poketime's Broken Tier",
-		desc: `Ultimate god tier mode for pokertime. Change stats right here in the ruleset!`,
-		mod: 'gen9',
-		challengeShow: true,
-		searchShow: true,
-		ruleset: [
-			'Raw Teams', // Bypasses the team validator completely
-			
-			// Change Fennekin's base stats right here:
-			// Format -> Adjust Species: Name-HP-Atk-Def-SpA-SpD-Spe
-			'Adjust Species: Fennekin-150-10-150-200-150-200', 
-			
-			// You can easily change anyone else's stats right here too:
-			'Adjust Species: Braixen-160-10-160-220-160-210',
-			'Adjust Species: Sylveon-180-10-150-220-160-180',
-		],
-	},
 
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
