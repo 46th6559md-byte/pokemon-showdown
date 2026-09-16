@@ -28,8 +28,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		challengeShow: true,
 		searchShow: true,
 		ruleset: [
-			'Raw Teams', // Bypasses the team validator completely
-			
 		],
 	},
 
