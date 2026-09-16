@@ -67995,7 +67995,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	fennekin: {
 		learnset: {
-			sheercold: ["9L65", "8L65", "7L50", "6L50", "5L55", "4L55", "3L55"],
 			agility: ["9M"],
 			attract: ["7M", "6M"],
 			burningjealousy: ["9M"],
