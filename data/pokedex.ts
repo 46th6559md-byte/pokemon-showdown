@@ -12061,13 +12061,13 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Chesnaughtite",
 		gen: 9,
 	},
-	fennekin: {
+		fennekin: {
 		num: 653,
 		name: "Fennekin",
-		types: ["Fire"],
-		genderRatio: { M: 0.875, F: 0.125 },
-		baseStats: { hp: 40, atk: 45, def: 40, spa: 200, spd: 60, spe: 200 },
-		abilities: { 0: "Simple", H: "Magician" },
+		types: ["Fire", "Ghost"], // Broken offensive/defensive typing
+		genderRatio: {M: 0.875, F: 0.125},
+		baseStats: {hp: 255, atk: 255, def: 255, spa: 255, spd: 255, spe: 255}, // Max possible hardcoded stats
+		abilities: {0: "Wonder Guard", H: "Huge Power"}, // Immune to almost everything + double physical Attack
 		heightm: 0.4,
 		weightkg: 9.4,
 		color: "Red",
