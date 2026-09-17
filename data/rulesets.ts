@@ -786,23 +786,27 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		],
 	},
 	speciesclause: {
-		effectType: 'ValidatorRule',
-		name: 'Species Clause',
-		desc: "Prevents teams from having more than one Pok&eacute;mon from the same species",
-		onBegin() {
-			this.add('rule', 'Species Clause: Limit one of each Pokémon');
-		},
-		onValidateTeam(team, format) {
-			const speciesTable = new Set<number>();
-			for (const set of team) {
-				const species = this.dex.species.get(set.species);
-				if (speciesTable.has(species.num)) {
-					return [`You are limited to one of each Pokémon by Species Clause.`, `(You have more than one ${species.baseSpecies})`];
-				}
-				speciesTable.add(species.num);
+	effectType: 'ValidatorRule',
+	name: 'Species Clause',
+	desc: "Limits the number of each Pokémon species on a team to 1.",
+	onValidateTeam(team, format) {
+		const speciesTable = new Set<number>();
+		for (const set of team) {
+			const species = this.dex.species.get(set.species);
+			
+			// ADD THIS EXCEPTION: If the Pokémon is Fennekin, ignore the duplicate check
+			if (species.id === 'fennekin') continue;
+
+			if (speciesTable.has(species.num)) {
+				return [
+					`You are limited to one of each Pokémon by Species Clause.`,
+					`(You have more than one ${species.name})`,
+				];
 			}
-		},
+			speciesTable.add(species.num);
+		}
 	},
+},
 	nicknameclause: {
 		effectType: 'ValidatorRule',
 		name: 'Nickname Clause',
@@ -919,23 +923,24 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		},
 	},
 	ohkoclause: {
-		effectType: 'ValidatorRule',
-		name: 'OHKO Clause',
-		desc: "Bans all OHKO moves, such as Fissure",
-		onBegin() {
-			this.add('rule', 'OHKO Clause: OHKO moves are banned');
-		},
-		onValidateSet(set) {
-			const problems: string[] = [];
-			if (set.moves) {
-				for (const moveId of set.moves) {
-					const move = this.dex.moves.get(moveId);
-					if (move.ohko) problems.push(move.name + ' is banned by OHKO Clause.');
-				}
+	effectType: 'ValidatorRule',
+	name: 'OHKO Clause',
+	desc: "Bans all One-Hit KO moves.",
+	onValidateSet(set, format) {
+		// ADD THIS EXCEPTION: Check if the species is Fennekin
+		const species = this.dex.species.get(set.species);
+		if (species.id === 'fennekin') return; // Bypasses the rule entirely for Fennekin
+
+		const problems = [];
+		for (const moveid of set.moves) {
+			const move = this.dex.moves.get(moveid);
+			if (move.ohko) {
+				problems.push(`${set.name || set.species} has ${move.name}, which is banned by OHKO Clause.`);
 			}
-			return problems;
-		},
+		}
+		if (problems.length) return problems;
 	},
+},
 	evasionclause: {
 		effectType: 'ValidatorRule',
 		name: 'Evasion Clause',
