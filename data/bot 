@@ -1,0 +1,22 @@
+from poke_env import AccountConfiguration, ServerConfiguration
+from poke_env.player import RandomPlayer
+
+# Your specific GitHub Codespace domain
+CODESPACE_DOMAIN = "automatic-trout-7rvwvpw4wqx2xp7g.github.dev"
+
+# Setup configuration mapping HTTP/HTTPS to WebSockets (WSS)
+codespace_config = ServerConfiguration(
+    f"https://{CODESPACE_DOMAIN}/action.php?",
+    f"wss://{CODESPACE_DOMAIN}/showdown/websocket"
+)
+
+# Replace 'BotUsername' with the name you want the bot to use
+bot = RandomPlayer(
+    account_configuration=AccountConfiguration("BotUsername", "any_password"),
+    server_configuration=codespace_config,
+    battle_format="gen9randombattle"
+)
+
+print("Bot is connecting to Codespace and waiting for your challenge...")
+# Replace 'YourUsername' with your main Showdown account name
+bot.accept_challenges("YourUsername", n_challenges=1)
