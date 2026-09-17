@@ -22,7 +22,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Custom Tiers",
 	},
 	{
-		name: "[Gen 9] Poketime's Broken Tier",
+		name: "[Gen 9] Pokertime's Broken Tier",
 		desc: `Ultimate god tier mode for pokertime. Change stats and attacks right here!`,
 		mod: 'gen9',
 		challengeShow: true,
