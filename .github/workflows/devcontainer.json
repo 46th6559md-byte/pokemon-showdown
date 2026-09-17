@@ -1,0 +1,10 @@
+{
+  "name": "pokemon-showdown",
+  "portsAttributes": {
+    "8000": {
+      "label": "Pokemon Showdown Server",
+      "onAutoForward": "notify",
+      "visibility": "public"
+    }
+  }
+}
