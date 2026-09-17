@@ -13,7 +13,7 @@ codespace_config = ServerConfiguration(
 async def main():
     # Initialize the bot account
     bot = RandomPlayer(
-        account_configuration=AccountConfiguration("BotUsername", "any_password"),
+        account_configuration=AccountConfiguration("bobthebot3", "Xj3$2F*8oI$lde"),
         server_configuration=codespace_config,
         battle_format="gen9randombattle"
     )
