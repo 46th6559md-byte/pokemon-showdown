@@ -16203,7 +16203,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Special",
 		name: "Sheer Cold",
 		pp: 100,
-		priority: 8,
+		priority: 5,
 		flags: { protect: 0, mirror: 0, metronome: 0 },
 		ohko: 'Ice',
 		target: "normal",
