@@ -14047,7 +14047,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Psychic",
 		pp: 50,
 		priority: 5,
-		flags: { protect: 0, mirror: 0, metronome: 0 },
+		flags: { protect: 1, mirror: 1, metronome: 1 },
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -16204,7 +16204,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Sheer Cold",
 		pp: 100,
 		priority: 5,
-		flags: { protect: 0, mirror: 0, metronome: 0 },
+		flags: { protect: 1, mirror: 1, metronome: 1 },
 		ohko: 'Ice',
 		target: "normal",
 		type: "Ice",
